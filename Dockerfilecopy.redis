@@ -1,8 +1,0 @@
-# Usa la imagen oficial de Redis como base
-FROM redis:latest
-
-# Instala procps para proporcionar sysctl
-RUN apt-get update && apt-get install -y procps
-
-# Comando para iniciar Redis con la configuración adicional
-CMD sh -c "sysctl vm.overcommit_memory=1 && redis-server --requirepass prueba --bind 0.0.0.0 --protected-mode yes --port 6379 --save 900 1 --save 300 10 --save 60 10000 --appendonly yes --slaveof no one"

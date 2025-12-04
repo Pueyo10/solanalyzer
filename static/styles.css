@@ -139,7 +139,7 @@ input[type="text"], input[type="number"], input[type="submit"] {
   border: 1px solid #fff;
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
-  margin: 8px;
+  margin: 3px;
   border-radius: 4px;
   text-align: center;
 }
@@ -424,10 +424,11 @@ input[type="text"]:focus, input[type="number"]:focus {
   top: 113px; /* Adjust this value to place the container appropriately */
   right: 12px;
   background-color: #1e1e1e;
-  padding: 0px;
+  padding: 10px;
   border-radius: 12px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  max-width: 50%; /* Limitar el ancho máximo */
 }
 
 .referral-table {
@@ -732,11 +733,20 @@ input[type="text"]:focus, input[type="number"]:focus {
 /* Ajustes generales para dispositivos móviles */
 @media only screen and (max-width: 600px) {
   body {
-    font-size: 14px;
+    font-size: 12px;
   }
 
-  .container {
-    padding: 0 10px;
+  .btn-logout {
+    display: block;
+    margin-top: -34px;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 88px;
   }
 
   .navbar {
@@ -749,9 +759,7 @@ input[type="text"]:focus, input[type="number"]:focus {
   }
 
   .wallet-status {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    width: 51%;
   }
 
   .info-sections {
@@ -760,7 +768,7 @@ input[type="text"]:focus, input[type="number"]:focus {
   }
 
   .withdraw-container, .referral-container {
-    width: 100%;
+    max-width: 50%;
     margin-right: 0;
   }
 
@@ -771,7 +779,42 @@ input[type="text"]:focus, input[type="number"]:focus {
 
   .referral-container2 {
     position: static;
-    margin-top: 20px;
+    margin-top: 26px;
+    width: 58%;
+  }
+
+  /* Ajustes específicos para las tablas de referidos */
+  .referral-table th, .referral-table td {
+    padding: 4px 2px;
+    font-size: 12px;
+  }
+
+  .referral-container {
+    width: 36%;
+    margin-top: 103px;
+    padding: -4px;
+    box-sizing: border-box;
+  }
+
+  /* Ajustes específicos para los campos de entrada */
+  .input-wallet, .input-days, #set-wallet, #wallet {
+    max-width: 53%;
+    box-sizing: border-box;
+  }
+
+  #set-wallet {
+    margin-bottom: 10px;
+  }
+
+  /* Ajustes para el contenedor de la conexión de la wallet */
+  .wallet-connection-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-connect-wallet, .btn-disconnect-wallet {
+    width: 50%;
   }
 }
 
@@ -798,6 +841,7 @@ input[type="text"]:focus, input[type="number"]:focus {
 
   .withdraw-container, .referral-container {
     flex: 1;
+    max-width: 50%;
     margin-right: 10px;
   }
 

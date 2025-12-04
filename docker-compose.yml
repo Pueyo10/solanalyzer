@@ -13,49 +13,9 @@ services:
       - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
       - CELERY_RESULT_BACKEND=redis://:prueba@redis:6379/0
 
-  celery_worker_1:
+  celery_worker:
     build: .
-    command: celery -A GraficoUltimaVersion worker --loglevel=info -c 10
-    depends_on:
-      - rabbitmq
-      - redis
-    environment:
-      - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
-      - CELERY_RESULT_BACKEND=redis://:prueba@redis:6379/0
-
-  celery_worker_2:
-    build: .
-    command: celery -A GraficoUltimaVersion worker --loglevel=info -c 10
-    depends_on:
-      - rabbitmq
-      - redis
-    environment:
-      - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
-      - CELERY_RESULT_BACKEND=redis://:prueba@redis:6379/0
-
-  celery_worker_3:
-    build: .
-    command: celery -A GraficoUltimaVersion worker --loglevel=info -c 10
-    depends_on:
-      - rabbitmq
-      - redis
-    environment:
-      - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
-      - CELERY_RESULT_BACKEND=redis://:prueba@redis:6379/0
-
-  celery_worker_4:
-    build: .
-    command: celery -A GraficoUltimaVersion worker --loglevel=info -c 10
-    depends_on:
-      - rabbitmq
-      - redis
-    environment:
-      - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
-      - CELERY_RESULT_BACKEND=redis://:prueba@redis:6379/0
-
-  celery_worker_5:
-    build: .
-    command: celery -A GraficoUltimaVersion worker --loglevel=info -c 10
+    command: celery -A GraficoUltimaVersion worker --loglevel=info -c 4
     depends_on:
       - rabbitmq
       - redis
@@ -76,5 +36,4 @@ services:
       dockerfile: Dockerfile.redis
     ports:
       - "6379:6379"
-    # Añadir la opción privileged: true
     privileged: true
