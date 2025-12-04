@@ -1,6 +1,0 @@
-moralis
-openapi_aptos_api
-openapi_auth
-openapi_evm_api
-openapi_sol_api
-openapi_streams

@@ -1,2 +1,0 @@
-from .get_contract_events import get_contract_events
-from .get_contract_logs import get_contract_logs
